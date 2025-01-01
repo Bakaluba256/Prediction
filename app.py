@@ -10,9 +10,12 @@ CORS(app)  # Enable CORS for all routes
 # Load the pre-trained model
 model = joblib.load('heart_disease_model.pkl')
 
+# Endpint for returning the landing page
 @app.route('/')
 def home():
     return "Welcome to the Heart Disease Prediction API"
+
+#Endpoint for capturing data from the frontend
 
 @app.route('/predict', methods=['POST'])
 def predict():
